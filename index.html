@@ -18,52 +18,47 @@
             body,h3,h4,h5 {font-family: "Roboto", sans-serif}
         </style>
         <style>
+            .animation--fade-bg {
+                background-color: OrangeRed;
+                animation-duration: 24s;
+                animation-name: fade-background;
+                animation-delay: 0;
+                animation-iteration-count: infinite;
+                animation-direction: forward;
+            }
+
+            @keyframes fade-background {
+                0%  {background-color: OrangeRed;}
+                50% {background-color: LightGoldenRodYellow;}
+                100% {background-color: OrangeRed;}
+            }
+
+            .animation--fade-titles {
+                color: DodgerBlue;
+                text-shadow:3px 3px 0 Black;
+                animation-duration: 24s;
+                animation-name: fade-title;
+                animation-delay: 0;
+                animation-iteration-count: infinite;
+                animation-direction: forward;
+            }
+
+            @keyframes fade-title {
+                0%  {color: DodgerBlue;
+                    text-shadow:3px 3px 0 Black;}
+                50% {color: DeepPink;
+                    text-shadow:3px 3px 0 LawnGreen;}
+                100% {color: DodgerBlue;
+                    text-shadow:3px 3px 0 Black;}
+            }
+              
             .w3-card {
                 background-color:#ff5500;
             } 
 
-            header {
-              background-color: LightGoldenRodYellow;
-              animation-name: example;
-              animation-duration: 12s;
-            }
-
-            body {
-                background-color: LightGoldenRodYellow;
-                animation-name: example;
-                animation-duration: 12s;
-            }
-
-            .w3-row {
-                background-color: LightGoldenRodYellow;
-                animation-name: example;
-                animation-duration: 12s;
-            }
-            
-            @keyframes example {
-              from {background-color: OrangeRed;}
-              to {background-color: LightGoldenRodYellow;}
-            }
-            h1,h2 {
-                color: DeepPink;
-                text-shadow:3px 3px 0 LawnGreen;
-                animation-name: titleone;
-                animation-duration: 12s;
-              }
-              
-              @keyframes titleone {
-                from {
-                    color: DodgerBlue;
-                    text-shadow:3px 3px 0 Black;
-                }
-                to {
-                    color: DeepPink;                    
-                    text-shadow:3px 3px 0 LawnGreen;
-                }
-              }
             </style>
     </head>
-    <body>
+    <body class="animation--fade-bg">
     <!-- w3-content defines a container for fixed size centered content, 
     and is wrapped around the whole page content, except for the footer in this example -->
         <div class="w3-content">
@@ -73,13 +68,13 @@
                     <header class="w3-container w3-center"> 
                         <div class="w3-row">
                             <div class="w3-col l8"> 
-                                <h1 id="TOPGUN" class="w3-jumbo w3-right-align">Karmacanix</h1>
+                                <h1 id="TOPGUN" class="w3-jumbo w3-right-align animation--fade-titles">Karmacanix</h1>
                             </div>
                             <div class="w3-col l1">
-                                <h2 class="w3-jumbo"><i class="fa-solid fa-volume-high fa-2xs"></i></h2>
+                                <h2 class="w3-jumbo animation--fade-titles"><i class="fa-solid fa-volume-high fa-2xs"></i></h2>
                             </div>
                             <div class="w3-col l3"> 
-                                <h2 class="w3-jumbo w3-left-align">Music</h2>
+                                <h2 class="w3-jumbo w3-left-align animation--fade-titles">Music</h2>
                             </div>
                         </div>
                     </header>
@@ -267,8 +262,8 @@
         </div>
         <!-- Footer -->
         <footer class="w3-container w3-dark-grey w3-padding w3-margin-top">
-            <h2 class="w3-center"><a href="#TOPGUN"><i class="fa-solid fa-jet-fighter-up fa-2xl"></i></a></h2>
-            <p class="w3-center">Powered by Karmalade<sup><i class="fa-regular fa-copyright fa-2xs"></i></sup> 2023</p>
+            <h2 class="w3-center animation--fade-titles"><a href="#TOPGUN"><i class="fa-solid fa-jet-fighter-up fa-2xl"></i></a></h2>
+                <p class="w3-center">Powered by <span style="color:LawnGreen;">Karmalade<sup><i class="fa-regular fa-copyright fa-2xs"></i></sup></span> 2023</p>
         </footer>
     </body>
 </html>
